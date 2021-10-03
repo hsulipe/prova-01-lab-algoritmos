@@ -1,0 +1,12 @@
+{
+  "name": "Prova-1",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "LOGGER_LEVEL=silent jest"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}
