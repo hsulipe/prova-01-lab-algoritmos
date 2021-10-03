@@ -3,15 +3,15 @@ module.exports = (capacidate, itens) => {
     const output = []
     for (let i = 0; load < capacidate && i < itens.length; i++) {
         let fração = 0
-        if(itens[i] <= capacidate - load) {
+        if(itens[i].peso <= capacidate - load) {
             fração = itens[i].peso
             output.push(itens[i]);
         }
         else {
-            fração = ((capacidate - load)/itens[i].peso)
+            fração = (capacidate - load)/itens[i].peso
             output.push({
                 valor: itens[i].valor,
-                peso: fração
+                peso: fração * itens[i].peso,
             })
         }
         load += fração
