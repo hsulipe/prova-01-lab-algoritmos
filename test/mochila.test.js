@@ -1,7 +1,7 @@
 const mochilaGulosa = require('../src/mochila')
 
 describe('Problema da mochila - Fracionada', () =>  {
-    it('teste - 1: Caso base ordenação de entrada ascendente', () => {
+    it('Caso entrada ordenada ascendente - Resultado esperado 240', () => {
         const arr = [
             {
                 valor: 60,
@@ -18,6 +18,7 @@ describe('Problema da mochila - Fracionada', () =>  {
         ]
         const capacidate = 50
         const result = mochilaGulosa(capacidate, arr)
+        const sum = result.reduce((a,b) => a+b.valor, 0)
         expect(result).toEqual([
             {
                 valor: 60,
@@ -28,13 +29,14 @@ describe('Problema da mochila - Fracionada', () =>  {
                 peso: 20
             },
             {
-                valor: 120,
-                peso: 20
+                valor: 80,
+                peso: 30
             },
         ])
+        expect(sum).toEqual(240)
     })
 
-    it('teste - 2: Caso inverso ordenação de entrada decrescente', () => {
+    it('Caso entrada ordenada decrescente - Resultado esperado 220', () => {
         const arr = [
             {
                 valor: 120,
@@ -51,6 +53,7 @@ describe('Problema da mochila - Fracionada', () =>  {
         ]
         const capacidate = 50
         const result = mochilaGulosa(capacidate, arr)
+        const sum = result.reduce((a,b) => a+b.valor, 0)
         expect(result).toEqual([
             {
                 valor: 120,
@@ -61,5 +64,6 @@ describe('Problema da mochila - Fracionada', () =>  {
                 peso: 20
             },
         ])
+        expect(sum).toEqual(220)
     })
 })

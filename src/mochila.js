@@ -1,4 +1,8 @@
 module.exports = (capacidate, itens) => {
+    // Para a solução ótima requer que a entrada das moedas 
+    // esteja ordenada de forma ascendente. Caso contrário, 
+    // não retornará o resultado ótimo.
+
     let load = 0;
     const output = []
     for (let i = 0; load < capacidate && i < itens.length; i++) {
@@ -10,8 +14,8 @@ module.exports = (capacidate, itens) => {
         else {
             fração = (capacidate - load)/itens[i].peso
             output.push({
-                valor: itens[i].valor,
-                peso: fração * itens[i].peso,
+                valor: fração * itens[i].valor,
+                peso: itens[i].peso,
             })
         }
         load += fração
