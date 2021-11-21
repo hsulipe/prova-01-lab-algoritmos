@@ -1,6 +1,6 @@
-const mochilaGulosa = require("../src/mochila");
+const mochilaAproximada = require("../src/mochila-aproximada");
 
-describe("Problema da mochila - Fracionada", () => {
+describe("Problema da mochila - Aproximada", () => {
   it("Caso entrada ordenada ascendente - Resultado esperado 8320", () => {
     const arr = [
       {
@@ -17,11 +17,11 @@ describe("Problema da mochila - Fracionada", () => {
       },
     ];
     const capacidate = 5000;
-    const result = mochilaGulosa(capacidate, arr);
+    const result = mochilaAproximada(capacidate, arr);
     expect(result).toEqual(8320);
   });
 
-  it("Caso entrada ordenada decrescente - Resultado esperado 7500", () => {
+  it("Caso entrada ordenada decrescente - Resultado esperado 8320", () => {
     const arr = [
       {
         valor: 60,
@@ -37,7 +37,7 @@ describe("Problema da mochila - Fracionada", () => {
       },
     ];
     const capacidate = 5000;
-    const result = mochilaGulosa(capacidate, arr);
-    expect(result).toEqual(7500);
+    const result = mochilaAproximada(capacidate, arr);
+    expect(result).toEqual(8320);
   });
 });
